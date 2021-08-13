@@ -10,7 +10,7 @@
 
 http://camma.u-strasbg.fr/
 
-This is an application for annotating frames with critical view of safety (CVS) criteria and other relevant information. It allows to navigate the dataset, grade CVS achievement, presence of tools, out-of-body frames, etc. You can choose to view the frames in sequential order or shuffled to help mitigate bias during annotation. If you have the VLC video player installed you can launch and play the video of the current frame from the moment corresponding to the frame.
+This is an application for annotating frames with critical view of safety (CVS) criteria and other relevant information. It allows to navigate the dataset, grade CVS achievement, presence of tools, out-of-body frames, etc. You can choose to view the frames in sequential order or shuffled to help mitigate bias during annotation. If you have the [VLC video player](https://www.videolan.org/) installed you can launch and play the video of the current frame from the moment corresponding to the frame.
 
 
 <img src="images/screenshot.png" width="60%">
