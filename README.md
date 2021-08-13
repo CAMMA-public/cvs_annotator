@@ -25,7 +25,7 @@ You can use the ***open video*** button at the top to launch the corresponding v
 
 You can learn about our annotation protocol [here](https://arxiv.org/abs/2106.10916).
 
-The annotations are saved each time a change is made, such as when a checkbox is checked or a comment is added. The CVS criteria annotation, however, is only saved when the ***OK*** button or enter is pressed (the ***seen*** checkbox will be automatically marked).
+The annotations are saved each time a change is made, such as when a checkbox is checked or a comment is added. The CVS criteria annotation, however, is only saved when the ***OK*** button is pressed (the ***seen*** checkbox will be automatically marked).
 
 ## Dependencies
 Requires VLC installed if you want to be able to play videos directly from the application. You can download it from https://www.videolan.org
