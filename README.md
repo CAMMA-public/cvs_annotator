@@ -10,22 +10,22 @@
 
 http://camma.u-strasbg.fr/
 
-This is an application for annotating frames with critical view of safety (CVS) criteria and other relevant information. It allows to navigate the dataset, grade CVS achievement, presence of tools, out-of-body frames, etc. You can choose to view the frames in sequential order or shuffled to help mitigate bias during annotation. If you have the [VLC video player](https://www.videolan.org/) installed you can launch and play the video of the current frame from the moment corresponding to the frame.
+This is an application for annotating frames with an assessment of the critical view of safety (CVS) criteria and other relevant information. It allows to navigate the dataset, assess CVS achievement, presence of tools, out-of-body frames, etc. You can choose to view the frames in sequential order or shuffled to help mitigate bias during annotation. If you have the [VLC video player](https://www.videolan.org/) installed you can launch and play the video of the current frame from the moment corresponding to the frame.
 
 
 <img src="images/screenshot.png" width="60%">
 
 ## How to use
 
-If you have Python3 and all the relevant libraries installed you can start the application with `python app.py`.
+If you have Python3 and all the relevant libraries installed (_see below_) you can start the application with the `python app.py` terminal command.
 
-When you launch the application for the first time, it will request that you select the folder containing the data (frames) that you want to annotate. After you select the directory, the application will start and you will see the first frame. You can annotate the CVS information for that frame, mark it as out-of-body or difficult to review using the checkboxes on the right. You can use the ***next*** and ***previous*** buttons to navigate the dataset. You will see the index of the current frame in the top-right corner of the application.
+When you launch the application for the first time, it will request that you select the folder containing the data (frames) that you want to annotate. After you select the directory, the application will start and you will see the first frame. You can annotate the 3 CVS criteria for that frame using the checkboxes tagged as ***1***, ***2***, ***3*** and mark frames as out-of-body, difficult to review, etc. using the checkboxes on the right. You can use the ***next*** and ***previous*** buttons to navigate the dataset. You will see the video and frame ID on the top-left of the application while the index of the current frame appears in the top-center.
 
-You can use the ***open video*** button at the top to launch the corresponding video file, at the particular moment of the current frame. This can be helpful if the identification of anatomical structures is particularly difficult to determine and more context is necessary. 
+You can use the ***open video*** button at the top to launch the corresponding video file; the video will open at the particular moment of the current frame. This can be helpful if the identification of anatomical structures is particularly difficult to determine and more context is necessary. 
 
 You can learn about our annotation protocol [here](https://arxiv.org/abs/2106.10916).
 
-The annotations are saved each time a change is made, such as when a checkbox is checked or a comment is added. The CVS criteria annotation, however, is only saved when the ***OK*** button is pressed.
+The annotations are saved each time a change is made, such as when a checkbox is checked or a comment is added. The CVS criteria annotation, however, is only saved when the ***OK*** button or enter is pressed (the ***seen*** checkbox will be automatically marked).
 
 ## Dependencies
 Requires VLC installed if you want to be able to play videos directly from the application. You can download it from https://www.videolan.org
@@ -71,7 +71,7 @@ This is saved in a `config.json` file, the content of which is as follows:
 `videos_dir`: Directory containing the video files 
 `vlc_path`:   If VLC is not in the system PATH, the path of the VLC executable
 
-The data should be organized like this:
+The data (frames) to be annotated should be organized like this:
     
 >    datapath
 >    >    video_name_1 
@@ -93,9 +93,8 @@ To reset the paths to the data, you can delete the `config.json` file (in the sa
 To download sample data with correct data structure click [here](https://s3.unistra.fr/camma_public/github/cvs_annotator/sample_data.zip).
 
 ## Annotations 
-You can annotate each frame with the following information:
+You can annotate each frame with the following binary information:
 - CVS criteria 1,2,3 (see [our annotation protocol](https://arxiv.org/abs/2106.10916))
-- Your comment
 - Presence of artifact
 - ROI not visible
 - ROI visible partially
@@ -106,10 +105,12 @@ You can annotate each frame with the following information:
 - Anatomical variation
 - Frame seen
 
+Additionally, you can also enter some free-text comment.
+
 The annotations are saved as `annotations.pickle` and `annotations.csv` located in the same folder as the application. The application uses only `annotations.pickle` file to load and display the data, while the `annotations.csv` file can be used to manually review the annotations in a text editor.
 
 ## Credits
-When referring to this software please cite the following publication:
+When using or referring to this software, please cite the following publication:
 
 *Mascagni P, Vardazaryan A, Alapatt D, Urade T, Emre T, Fiorillo C, Pessaux P, Mutter D, Marescaux J, Costamagna G, Dallemagne B, Padoy N. Artificial Intelligence for Surgical Safety, Annals of Surgery: November 16, 2020 - doi: 10.1097/SLA.0000000000004351*
 
